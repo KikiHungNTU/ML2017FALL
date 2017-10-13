@@ -1,3 +1,3 @@
 #!bin/bash
-python3 hw1.py $1 $2
+python3 test.py hw1.npy $1 $2
 

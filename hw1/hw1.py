@@ -141,9 +141,9 @@ for i in range(repeat):
     print ('iteration: %d | Cost: %f  ' % ( i, cost_a ))
         
     # save model
-np.save('model.npy',w)
+np.save('hw1.npy',w)
 # read model
-w = np.load('model.npy')
+w = np.load('hw1.npy')
 
 #讀Test
 inputFile = str(sys.argv[1])
