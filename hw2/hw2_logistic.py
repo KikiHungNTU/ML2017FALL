@@ -104,7 +104,7 @@ def train(X_all, Y_all, save_dir):
 
         # Random shuffle
         X_train, Y_train = _shuffle(X_train, Y_train)
-        Lambda = 0.1
+        #Lambda = 0.1
         # Train with batch
         for idx in range(step_num):
             X = X_train[idx*batch_size:(idx+1)*batch_size]
@@ -121,7 +121,7 @@ def train(X_all, Y_all, save_dir):
 
             w_grad = np.mean(-1 * X * (np.squeeze(Y) - y).reshape((batch_size,1)), axis=0)
             #Regularization
-            w_grad = w_grad + 2*Lambda*w
+            #w_grad = w_grad + 2*Lambda*w
             b_grad = np.mean(-1 * (np.squeeze(Y) - y))
 
             # SGD updating parameters
@@ -174,4 +174,3 @@ X_all, X_test = normalize(X_all, X_test)
 train(X_all, Y_all,'logistic_params')
 #infer(X_test, 'logistic_params','logistic_output')
 infer(X_test, 'logistic_params')
-
