@@ -35,7 +35,6 @@ labels, label_text, unlabel_text = load_train_data(label_file, no_label_file)
 
 #把句子拿來做Word2vec
 text_train_seq = []
-text_test_seq = []
 for i in range(len(label_text)):
     text_train_seq.append(label_text[i].split())
 

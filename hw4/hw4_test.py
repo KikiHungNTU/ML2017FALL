@@ -68,6 +68,8 @@ model = get_model(word_vectors)
 model.load_weights('model.hdf5')
 print('Predicting...')
 y_test = model.predict_classes(text_test, batch_size=256, verbose=1)
+#y_test = model.predict(text_test, batch_size=256, verbose=1)
+
 print('Writing...')
 df = pd.DataFrame({'label':y_test.T[0], 'id': range(len(y_test))}).to_csv(outputFile, index = False)
 
