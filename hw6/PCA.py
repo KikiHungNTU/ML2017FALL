@@ -78,11 +78,11 @@ def reconstruct_old(img, idx, weights, mean, U, shape):
     new2old_img = new2old_img.reshape(shape)
     new2old_img = (-1) * new2old_img
     new2old_img = computeEigen(new2old_img)
-    image_show(new2old_img)
+    #image_show(new2old_img)
     return new2old_img
 
 new2old_img = reconstruct_old(img, idx = 7, weights=img_weights, mean = mean, U = U, shape = shape)
-#io.imsave( targetFile + '.jpg', new2old_img)
+io.imsave( 'reconstruction.jpg',new2old_img)
 
 
 #new2old_img = reconstruct_old(img, idx = 7, weights=img_weights, mean = mean, U = U, shape = shape)
