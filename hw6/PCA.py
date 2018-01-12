@@ -12,7 +12,7 @@ import sys
 
 imageFile = sys.argv[1]
 targetFile = sys.argv[2]
-idx = targetFile[:-4]
+idx = int(targetFile[:-4])
 #path = 'C:/Users/chich/Desktop/ML2017FALL/6/Report/'
 img = io.ImageCollection(imageFile+'/*.jpg')
 print(len(img))
@@ -81,7 +81,7 @@ def reconstruct_old(img, idx, weights, mean, U, shape):
     #image_show(new2old_img)
     return new2old_img
 
-new2old_img = reconstruct_old(img, idx = 7, weights=img_weights, mean = mean, U = U, shape = shape)
+new2old_img = reconstruct_old(img, idx, weights=img_weights, mean = mean, U = U, shape = shape)
 io.imsave( 'reconstruction.jpg',new2old_img)
 
 
